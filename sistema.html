@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://bootswatch.com/5/lumen/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Sistema de simulación</title>
+</head>
+<body onload="llamarCuenta()">
+    <header class="container-fluid bg-dark sticky-top">
+        <nav>
+            <ul class="nav nav-pills mb-3 container py-3" id="pills-tab" role="tablist">
+                <li class="nav-item " role="presentation">
+                    <a class="nav-link active " id="pills-caja-tab" data-bs-toggle="pill" data-bs-target="#pills-caja"
+                        type="button" role="tab" aria-controls="pills-caja" aria-selected="true">Caja de Ahorro</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-simulador-tab" data-bs-toggle="pill" data-bs-target="#pills-simulador"
+                        type="button" role="tab" aria-controls="pills-simular" aria-selected="false">Simulador</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-cursos-tab" data-bs-toggle="pill" data-bs-target="#pills-cursos"
+                        type="button" role="tab" aria-controls="pills-cursos" aria-selected="false">Cursos</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-carrito-tab" data-bs-toggle="pill" data-bs-target="#pills-carrito"
+                        type="button" role="tab" aria-controls="pills-carrito" aria-selected="false">Carrito</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-caja" role="tabpanel" aria-labelledby="pills-caja-tab"
+            tabindex="0">
+<!-- Primera solapa -------- -->
+    <!-- Utilizo cliente.js y scriptCaja  -->
+            <h1>Caja de ahorro</h1>
+            <h2 id="cliente"></h2>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">TIPO DE CUENTA</th>
+                        <th scope="col">MONEDA</th>
+                        <th scope="col">CUENTA</th>
+                        <th scope="col">SALDO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Caja de ahorro</th>
+                        <td>$</td>
+                        <td id="cuenta"></td>
+                        <td id="saldoCaja"></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">Caja en dólares</th>
+                        <td>U$S</td>
+                        <td id="cuenta_dolares"></td>
+                        <td id="saldo_dolares"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cargoCuenta container">
+                <form class="cargoCuentaForm">
+                    <h3 class="title">Cargar dinero en caja de ahorro</h3>
+                    <div>
+                        <input type="text" class="form-control rounded border-white mb-3 form-input" id="saldoMonto"
+                            placeholder="Ingrese dinero a su cuenta" required>
+                    </div>
+                    <div class="submit-button-wrapper ">
+                        <input class="btn btn-success" type="button" value="Ingresar" id="btnCaja">
+                    </div>
+                </form>
+            </div>
+          
+<!-- Fin Primera Solapa -->
+        </div>
+        <div class="tab-pane fade container" id="pills-simulador" role="tabpanel" aria-labelledby="pills-simulador-tab"
+            tabindex="0">
+<!-- Segunda Solapa -->
+        <!-- utilizo script.js -->
+            <div class="simulador">
+                <form class="simulador-form">
+                    <h3 class="title">Simulador de plazo fijo</h3>
+                    <p class="description">Ingrese el monto y los días</p>
+                    <div>
+                        <input type="text" class="form-control rounded border-white mb-3 form-input" id="monto"
+                            placeholder="Ingrese el monto a simular" required>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control rounded border-white mb-3 form-input" id="dias"
+                            placeholder="Ingrese los días" required>
+                    </div>
+                    <div class="submit-button-wrapper">
+                        <input type="button" value="Simular" id="btnSimular">
+                        <input type="submit" value="Borrar" id="btnBorrar">
+                    </div>
+                </form>
+            </div>
+            <div class="resultados-simulador">
+                <p id="TNA"></p>
+                <p id="interes"></p>
+                <p id="total"></p>
+                <p id="fecha"></p>
+            </div>           
+<!-- Fin Segunda Solapa -->
+        </div>
+        <div class="tab-pane fade container" id="pills-cursos" role="tabpanel" aria-labelledby="pills-cursos-tab"
+            tabindex="0">
+<!-- Tercera Solapa -->
+        <!-- Utilizo compras.js -->
+            <h4 class="h4 m-4 text-success">Cursos de Programación</h4>
+            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4" id="cards"></div>
+
+            <template id="template-card">
+                <div class="col d-flex justify-content-center-mb-4">
+                    <div class="card shadow mb-1 rounded" style="width: 18rem;">
+                        <img src="" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">titulo</h5>
+                            <p class="card-text">precio</p>
+                            <button class="btn btn-success">Adquirir</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+<!-- Fin Tercera Solapa -->
+        </div>
+        <div class="tab-pane fade" id="pills-carrito" role="tabpanel" aria-labelledby="pills-carrito-tab" tabindex="0">
+<!-- Cuarta Solapa -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="items"></tbody>
+                <tfoot>
+                    <tr id="footer">
+                        <th scope="row" colspan="5">Adquiera sus cursos Ya!</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <template id="template-carrito">
+                <tr>
+                    <th scope="row">id</th>
+                    <td>Café</td>
+                    <td>1</td>
+                    <td>
+                        <button class="btn btn-info btn-sm">
+                            +
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            -
+                        </button>
+                    </td>
+                    <td>$ <span>500</span></td>
+                </tr>
+            </template>
+
+            <template id="template-footer">
+                <th scope="row" colspan="2">Total productos</th>
+                <td>10</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                        Vaciar todo
+                    </button>
+                    <button class="btn btn-info btn-sm" id="comprar-carrito">
+                        Comprar
+                    </button>
+                </td>
+                <td class="font-weight-bold">$ <span>5000</span></td>
+            </template>
+        </div>
+<!-- Fin Cuarta Solapa -->
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/cliente.js"></script>
+    <script src="./js/scriptCaja.js"></script>
+    <script src="./js/compras.js"></script>
+    <script src="./js/script.js" ></script>
+</body>
+
+</html>

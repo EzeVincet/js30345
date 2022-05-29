@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">  
+    <title>Carga de usuarios</title>
+</head>
+<body>
+    <div class="titulo">
+        <h1>Banco Coder</h1>
+    </div>   
+    <section class="simulador">
+        <form class="simulador-form" name="frmIngreso" ACTION="javascript:verifica()">
+            <h3 class="title">Ingreso al sistema</h3>            
+            <div>                
+                <input type="text" class="form-control rounded border-white mb-3 form-input" id="user"
+                    placeholder="Ingrese el usuario" required>
+            </div>
+            <div>
+                <input type="password" class="form-control rounded border-white mb-3 form-input" id="contrase"
+                    placeholder="Ingrese su password" required>
+            </div>            
+            <div class="submit-button-wrapper">
+                <input type="submit" value="Ingresar" >
+                <input type="reset" value="Borrar" >
+            </div>            
+        </form>       
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+    <script src="js/cliente.js"></script>   
+    <script src="js/login.js"></script>    
+</body>
+</html>
