@@ -1,38 +1,37 @@
-[
-    {
-      "precio": 5000,
-      "id": 1,
-      "title": "Curso Desarrollo Web",
-      "img": "./img/diseñoWeb.png"
+[{
+        "precio": 5000,
+        "id": 1,
+        "title": "Curso Desarrollo Web",
+        "img": "./img/diseñoWeb.png"
     },
     {
-      "precio": 7000,
-      "id": 2,
-      "title": "Curso de JavaScript",
-      "img": "./img/javaScript.png"
+        "precio": 7000,
+        "id": 2,
+        "title": "Curso de JavaScript",
+        "img": "./img/javaScript.png"
     },
     {
-      "precio": 10000,
-      "id": 3,
-      "title": "Curso de React",
-      "img": "./img/react.png"
+        "precio": 10000,
+        "id": 3,
+        "title": "Curso de React",
+        "img": "./img/react.png"
     },
     {
-      "precio": 12000,
-      "id": 4,
-      "title": "Curso de Backend",
-      "img": "./img/backend.png"
+        "precio": 12000,
+        "id": 4,
+        "title": "Curso de Backend",
+        "img": "./img/backend.png"
     },
     {
-      "precio": 4000,
-      "id": 5,
-      "title": "Curso de Wordpress",
-      "img": "./img/wordpress.png"
+        "precio": 4000,
+        "id": 5,
+        "title": "Curso de Wordpress",
+        "img": "./img/wordpress.png"
     },
     {
-      "precio": 15000,
-      "id": 6,
-      "title": "Curso de Desarrollo",
-      "img": "./img/aplicaciones.png"
+        "precio": 15000,
+        "id": 6,
+        "title": "Curso de Desarrollo",
+        "img": "./img/aplicaciones.png"
     }
-  ]
+]
